@@ -2,8 +2,11 @@ package br.com.zup.ZupSimula.Simulacao.dtos;
 
 import br.com.zup.ZupSimula.Simulacao.enuns.Risco;
 
+import javax.validation.constraints.Email;
+
 //lombok cria gets e sets automaticamente.
 public class SimulacaoDTO {
+    @Email(message = "Email invalido")
     private String email;
     private String nome;
     private String cpf;
