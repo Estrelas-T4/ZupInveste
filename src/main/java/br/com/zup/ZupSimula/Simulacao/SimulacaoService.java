@@ -4,18 +4,26 @@ import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoDTO;
 import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoSaidaDTO;
 import br.com.zup.ZupSimula.Simulacao.enuns.Risco;
 import br.com.zup.ZupSimula.Simulacao.exceptions.ValorBaixoParaRiscoAltoException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class SimulacaoService {
-    private List<SimulacaoDTO> mailing = new ArrayList<>();
+    @Autowired
+    private SimulacaoRepository simulacaoRepository;
 
-    public void adicionarSimulacaoNaLista(SimulacaoDTO simulacaoDTO){
+    public void cadastrarSimulacaoNaLista(SimulacaoDTO simulacaoDTO){
         varificarValorERisco(simulacaoDTO);
-        mailing.add(simulacaoDTO);
+
+        Simulacao simulacao = new Simulacao();
+        simulacao.setCpf(simulacaoDTO.getCpf());
+        simulacao.setEmail(simulacaoDTO.getEmail());
+        simulacao.setRisco(simulacaoDTO.getRisco());
+        simulacao.setPeriodoDeAplicacaoMeses(simulacaoDTO.getPeriodoDeAplicacaoMeses());
+        simulacao.setValorInvestimento(simulacaoDTO.getValorInvestimento());
+        simulacao.setNome(simulacaoDTO.getNome());
+
+        simulacaoRepository.save(simulacao);
     }
 
     public SimulacaoSaidaDTO calcularSimulacao(SimulacaoDTO simulacaoDTO){
@@ -34,7 +42,7 @@ public class SimulacaoService {
     }
 
     public SimulacaoSaidaDTO realizarSimulacao(SimulacaoDTO simulacaoDTO){
-        adicionarSimulacaoNaLista(simulacaoDTO);
+        cadastrarSimulacaoNaLista(simulacaoDTO);
         return calcularSimulacao(simulacaoDTO);
     }
 
