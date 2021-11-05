@@ -1,5 +1,7 @@
 package br.com.zup.ZupSimula.Simulacao.dtos;
 
+import br.com.zup.ZupSimula.Simulacao.enuns.Risco;
+
 //lombok cria gets e sets automaticamente.
 public class SimulacaoDTO {
     private String email;
