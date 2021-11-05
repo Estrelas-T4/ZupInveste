@@ -1,6 +1,6 @@
 package br.com.zup.ZupSimula.confg;
 
-import br.com.zup.ZupSimula.Simulacao.exceptions.ValorBaixoParaRiscoAltoException;
+import br.com.zup.ZupSimula.simulacao.exceptions.ValorBaixoParaRiscoAltoException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;

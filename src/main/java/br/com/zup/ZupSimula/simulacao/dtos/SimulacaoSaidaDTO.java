@@ -1,4 +1,4 @@
-package br.com.zup.ZupSimula.Simulacao.dtos;
+package br.com.zup.ZupSimula.simulacao.dtos;
 
 public class SimulacaoSaidaDTO {
     private double valorInvestido;

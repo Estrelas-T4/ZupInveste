@@ -1,4 +1,4 @@
-package br.com.zup.ZupSimula.Simulacao;
+package br.com.zup.ZupSimula.simulacao;
 
 import org.springframework.data.repository.CrudRepository;
 

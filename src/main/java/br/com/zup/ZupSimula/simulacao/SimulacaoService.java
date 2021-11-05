@@ -1,9 +1,9 @@
-package br.com.zup.ZupSimula.Simulacao;
+package br.com.zup.ZupSimula.simulacao;
 
-import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoDTO;
-import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoSaidaDTO;
-import br.com.zup.ZupSimula.Simulacao.enuns.Risco;
-import br.com.zup.ZupSimula.Simulacao.exceptions.ValorBaixoParaRiscoAltoException;
+import br.com.zup.ZupSimula.simulacao.dtos.SimulacaoDTO;
+import br.com.zup.ZupSimula.simulacao.dtos.SimulacaoSaidaDTO;
+import br.com.zup.ZupSimula.simulacao.enuns.Risco;
+import br.com.zup.ZupSimula.simulacao.exceptions.ValorBaixoParaRiscoAltoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

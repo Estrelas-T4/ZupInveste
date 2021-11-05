@@ -1,4 +1,4 @@
-package br.com.zup.ZupSimula.Simulacao.enuns;
+package br.com.zup.ZupSimula.simulacao.enuns;
 
 public enum Risco {
     ALTO(0.025), MEDIO(0.015), BAIXO(0.005);

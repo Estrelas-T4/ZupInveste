@@ -1,7 +1,7 @@
-package br.com.zup.ZupSimula.Simulacao;
+package br.com.zup.ZupSimula.simulacao;
 
-import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoDTO;
-import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoSaidaDTO;
+import br.com.zup.ZupSimula.simulacao.dtos.SimulacaoDTO;
+import br.com.zup.ZupSimula.simulacao.dtos.SimulacaoSaidaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;

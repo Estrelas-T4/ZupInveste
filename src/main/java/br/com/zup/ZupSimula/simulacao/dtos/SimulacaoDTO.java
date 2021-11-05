@@ -1,36 +1,24 @@
-package br.com.zup.ZupSimula.Simulacao;
+package br.com.zup.ZupSimula.simulacao.dtos;
 
-import br.com.zup.ZupSimula.Simulacao.enuns.Risco;
+import br.com.zup.ZupSimula.simulacao.enuns.Risco;
+import org.hibernate.validator.constraints.br.CPF;
 
-import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 
-@Entity
-@Table(name = "simulacoes")
-//lombok
-public class Simulacao {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(unique = true) // Column para minupular a tabela. unique true para tornar o campo unico
+//lombok cria gets e sets automaticamente.
+public class SimulacaoDTO {
+    @Email(message = "Email inválido")
     private String email;
     private String nome;
-    @Column(unique = true)
+    @CPF(message = "CPF inválido")
     private String cpf;
-    @Column(name = "valor_investimento") // name serve para referenciar coluna ou mudar o nome dela
     private double valorInvestimento;
-    @Column(name = "periodo_de_aplicacao_em_meses")
+    @Min(value = 2, message = "Periodo minimo de aplicação é de 2 meses")
     private int periodoDeAplicacaoMeses;
     private Risco risco;
 
-    public Simulacao() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public SimulacaoDTO() {
     }
 
     public String getEmail() {
