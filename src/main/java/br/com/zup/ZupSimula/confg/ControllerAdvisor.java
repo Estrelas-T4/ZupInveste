@@ -2,6 +2,7 @@ package br.com.zup.ZupSimula.confg;
 
 import br.com.zup.ZupSimula.Simulacao.exceptions.ValorBaixoParaRiscoAltoException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -32,5 +33,14 @@ public class ControllerAdvisor {
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public MensagemDeErro manipularExcecaoDeRiscoAltoEValorBaixo(ValorBaixoParaRiscoAltoException exception){
         return new MensagemDeErro(exception.getMessage());
+    }
+
+   @ExceptionHandler(HttpMessageNotReadableException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public MensagemDeErro manupularExcecaoDeEnumInvalido(HttpMessageNotReadableException exception){
+      if(exception.getLocalizedMessage().contains("br.com.zup.ZupSimula.Simulacao.enuns.Risco")){
+          return new MensagemDeErro("Risco não reconhecido");
+      }
+        return new MensagemDeErro(exception.getLocalizedMessage());
     }
 }
