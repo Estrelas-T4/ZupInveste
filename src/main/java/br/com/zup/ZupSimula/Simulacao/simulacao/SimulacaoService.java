@@ -30,4 +30,5 @@ public class SimulacaoService {
 
         return new SimulacaoSaidaDTO(valorAplicado, valorDoLucro, valorTotal);
     }
+
 }
