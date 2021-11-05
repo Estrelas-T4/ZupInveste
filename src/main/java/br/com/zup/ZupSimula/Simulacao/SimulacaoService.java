@@ -1,4 +1,4 @@
-package br.com.zup.ZupSimula.Simulacao.simulacao;
+package br.com.zup.ZupSimula.Simulacao;
 
 import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoDTO;
 import br.com.zup.ZupSimula.Simulacao.dtos.SimulacaoSaidaDTO;
