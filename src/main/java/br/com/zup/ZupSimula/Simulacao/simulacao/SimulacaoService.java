@@ -8,9 +8,9 @@ import java.util.List;
 
 @Service
 public class SimulacaoService {
-    private List<SimulacaoDTO> simulacaoDTOS = new ArrayList<>();
+    private List<SimulacaoDTO> mailing = new ArrayList<>();
 
     public void adicionarSimulacaoNaLista(SimulacaoDTO simulacaoDTO){
-        simulacaoDTOS.add(simulacaoDTO);
+        mailing.add(simulacaoDTO);
     }
 }
