@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/simulacao")
 public class SimulacaoController {
@@ -15,7 +17,7 @@ public class SimulacaoController {
     private SimulacaoService simulacaoService;
 
     @PutMapping
-    public SimulacaoSaidaDTO simularInvestimento(@RequestBody SimulacaoDTO simulacaoDTO){
+    public SimulacaoSaidaDTO simularInvestimento(@RequestBody @Valid SimulacaoDTO simulacaoDTO){
         return simulacaoService.realizarSimulacao(simulacaoDTO);
     }
 }
