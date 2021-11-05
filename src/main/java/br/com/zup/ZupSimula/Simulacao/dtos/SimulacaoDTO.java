@@ -1,16 +1,20 @@
 package br.com.zup.ZupSimula.Simulacao.dtos;
 
 import br.com.zup.ZupSimula.Simulacao.enuns.Risco;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 
 //lombok cria gets e sets automaticamente.
 public class SimulacaoDTO {
-    @Email(message = "Email invalido")
+    @Email(message = "Email inválido")
     private String email;
     private String nome;
+    @CPF(message = "CPF inválido")
     private String cpf;
     private double valorInvestimento;
+    @Min(value = 2, message = "Periodo minimo de aplicação é de 2 meses")
     private int periodoDeAplicacaoMeses;
     private Risco risco;
 
