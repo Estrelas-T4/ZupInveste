@@ -10,5 +10,7 @@ import java.util.List;
 public class SimulacaoService {
     private List<SimulacaoDTO> simulacaoDTOS = new ArrayList<>();
 
-
+    public void adicionarSimulacaoNaLista(SimulacaoDTO simulacaoDTO){
+        simulacaoDTOS.add(simulacaoDTO);
+    }
 }
