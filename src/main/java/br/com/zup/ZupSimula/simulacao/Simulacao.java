@@ -20,6 +20,7 @@ public class Simulacao {
     private double valorInvestimento;
     @Column(name = "periodo_de_aplicacao_em_meses")
     private int periodoDeAplicacaoMeses;
+    @Enumerated(EnumType.STRING)
     private Risco risco;
 
     public Simulacao() {

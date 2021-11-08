@@ -7,6 +7,9 @@ import br.com.zup.ZupSimula.simulacao.exceptions.ValorBaixoParaRiscoAltoExceptio
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class SimulacaoService {
     @Autowired
@@ -52,4 +55,19 @@ public class SimulacaoService {
         }
     }
 
+    public List<Simulacao> exibirTodasAsSimulacoes(Risco risco){
+        if(risco != null){
+            return simulacaoRepository.findAllByRisco(risco);
+        }
+        Iterable<Simulacao> simulacaos = simulacaoRepository.findAll();
+        return (List<Simulacao>) simulacaos;
+    }
+
+    public Simulacao buscarPorID(int id){
+        Optional<Simulacao> simulacao = simulacaoRepository.findById(id);
+        if (simulacao.isEmpty()){
+            throw new RuntimeException("Não encontrado");
+        }
+        return simulacao.get();
+    }
 }
